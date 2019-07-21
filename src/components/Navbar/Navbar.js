@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from 'react-spatial/components/Button';
+import Button from '../../../node_modules/react-spatial/components/Button';
 
 import './Navbar.scss'
 

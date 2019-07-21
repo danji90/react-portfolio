@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import './AboutMe.scss'
 
 function AboutMe() {
-
   return (
     <div className="about-container">
       <h1>About Me</h1>

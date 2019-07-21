@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Home from '../Home/Home';
 import AboutMe from '../AboutMe/AboutMe';
 
 import './Portfolio.scss';
@@ -11,6 +12,7 @@ class Portfolio extends Component {
       <header>
         <Navbar></Navbar>
       </header>
+      <Home/>
       <div>
         <div className="columns">
           <div className="column-primary">
