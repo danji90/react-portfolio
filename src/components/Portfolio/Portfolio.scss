@@ -1,19 +1,25 @@
-.columns {
-  display: flex;
-  padding: 20px;
-  background-color: #F1EEED;
-}
+@media screen and (min-width: 800px) {
+  .columns {
+    display: flex;
+    padding: 20px;
+    background-color: #F1EEED;
+    column-count: 3;
+    column-gap: 3%;
+    column-width: 30%;
+  }
 
-.column-primary {
-  margin: 10px;
-  padding: 20px;
-  background-color: white;
-  width: 70%;
-}
+  .column-primary {
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    width: 70%;
+    height: 500px;
+  }
 
-.column-secondary {
-  margin: 10px;
-  padding: 20px;
-  background-color: white;
-  width: 30%;
+  .column-secondary {
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    width: 30%;
+  }
 }
