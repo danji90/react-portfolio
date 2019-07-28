@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FaBars } from '../../../node_modules/react-icons/fa'
 import Button from '../../../node_modules/react-spatial/components/Button';
 
 import './Navbar.scss'
@@ -26,7 +27,8 @@ class Navbar extends Component{
             active={index===this.state.activeTab}
             tabIndex={index}
             className={`navbar-item ${index===this.state.activeTab ? ' active' : ''}`}
-            onClick={(item) => this.tabClickHandler(index)}>{item}</Button>
+            onClick={(item) => this.tabClickHandler(index)}>{item}
+          </Button>
         )
       })
     )
@@ -35,7 +37,12 @@ class Navbar extends Component{
   render(){
     return (
       <div className='navbar'>
-        {this.renderNavbarItems()}
+        <div className='nav-items'>
+          {this.renderNavbarItems()}
+        </div>
+        <Button title={'Expand'} className="hamburger" tabIndex={-1} onClick={() => alert('expand')}>
+          <FaBars/ >
+        </Button>
       </div>
     )
   }
