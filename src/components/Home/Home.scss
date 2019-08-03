@@ -14,6 +14,7 @@
     order: 2;
 
     .contact-button {
+      text-decoration: none !important;
       float: right;
       border-radius: 5px;
       padding: 10px;
@@ -51,6 +52,7 @@
 @media screen and (max-width: 1000px) {
   .home-container {
     display: flex;
+    margin-top: 50px;
     flex-direction: column;
     align-items: center;
   }
@@ -65,7 +67,7 @@
 
   .mail-link {
     .contact-button {
-      text-decoration: none;
+      text-decoration: none !important;
       border-radius: 5px;
       padding: 10px;
       margin: 20px;

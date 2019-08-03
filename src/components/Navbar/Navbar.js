@@ -22,7 +22,7 @@ class Navbar extends Component{
 
   toggleExpandMenu() {
     const { navMenuOpen } = this.state;
-    this.setState({navMenuOpen: !navMenuOpen})
+    this.setState({navMenuOpen: !navMenuOpen});
   }
 
   renderNavbarItems(){
@@ -36,7 +36,11 @@ class Navbar extends Component{
             title={item}
             active={index===activeTab}
             className={`navbar-item ${index===activeTab ? ' active' : ''}`}
-            onClick={(item) => this.tabClickHandler(index)}>{item}
+            onClick={(item) => {
+              this.setState({navMenuOpen: false});
+              this.tabClickHandler(index)
+            }}>
+            {item}
           </Button>
         )
       })

@@ -1,16 +1,27 @@
+.app-content {
+  background-color: #F1EEED;
+  padding: 20px;
+}
+
+.map-section {
+  margin: 0 0 20px;
+}
+
 @media screen and (min-width: 1000px) {
+  .map-section {
+    margin: 0 10px 15px;
+  }
+
   .columns {
     display: flex;
-    padding: 20px;
-    background-color: #F1EEED;
     column-count: 3;
     column-gap: 3%;
     column-width: 30%;
     z-index: 0;
+    margin: 10px;
   }
 
   .column-primary {
-    background-color: #F1EEED;
     width: 70%;
   }
 
@@ -21,23 +32,22 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .map-section {
+    margin: 15px 0 15px;
+  }
+
   .columns {
     display: flex;
     flex-direction: column;
-    padding: 20px;
     background-color: #F1EEED;
-    padding: 20px;
   }
 
   .column-primary {
-    margin: 10px;
-    padding: 20px;
     background-color: white;
+    margin: 15px 0 15px;
   }
 
   .column-secondary {
-    margin: 10px;
-    padding: 20px;
     background-color: white;
   }
 }
