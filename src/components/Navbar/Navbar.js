@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaBars } from '../../../node_modules/react-icons/fa'
+import { FaBars } from '../../../node_modules/react-icons/fa';
 import Button from '../../../node_modules/react-spatial/components/Button';
 
 import './Navbar.scss'

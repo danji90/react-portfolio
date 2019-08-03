@@ -1,8 +1,3 @@
-header {
-  overflow: visible;
-  z-index: 1000;
-}
-
 @media screen and (min-width: 1000px) {
   .columns {
     display: flex;
@@ -15,18 +10,12 @@ header {
   }
 
   .column-primary {
-    margin: 10px;
-    padding: 20px;
-    background-color: white;
+    background-color: #F1EEED;
     width: 70%;
-    min-height: 100px;
-    max-height: 500px;
   }
 
   .column-secondary {
-    margin: 10px;
-    padding: 20px;
-    background-color: white;
+    background-color: #F1EEED;
     width: 30%;
   }
 }

@@ -1,9 +1,13 @@
 .navbar {
+  overflow: visible;   
+  position: fixed;
+  top: 0;
   display: flex;
   color: white;
   background-color: #282c34;
   width: 100%;
   max-height: 50px;
+  z-index: 1000;
 }
 
 .menu-btn {
