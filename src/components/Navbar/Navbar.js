@@ -9,7 +9,10 @@ class Navbar extends Component{
     super(props)
     this.activeTab = undefined;
     this.renderNavbarItems = this.renderNavbarItems.bind(this);
-    this.state = { activeTab: undefined };
+    this.state = {
+      activeTab: undefined,
+      navMenuOpen: false,
+    };
     this.tabClickHandler = this.tabClickHandler.bind(this)
   }
 
@@ -17,16 +20,22 @@ class Navbar extends Component{
     this.setState({ activeTab: selected });
   };
 
+  toggleExpandMenu() {
+    const { navMenuOpen } = this.state;
+    this.setState({navMenuOpen: !navMenuOpen})
+  }
+
   renderNavbarItems(){
     const items = ['Home', 'About Me', 'Projects', 'Experience', 'My Github']
+    const { activeTab } = this.state;
     return (
       items.map((item, index) => {
         return (
           <Button
+            key={index}
             title={item}
-            active={index===this.state.activeTab}
-            tabIndex={index}
-            className={`navbar-item ${index===this.state.activeTab ? ' active' : ''}`}
+            active={index===activeTab}
+            className={`navbar-item ${index===activeTab ? ' active' : ''}`}
             onClick={(item) => this.tabClickHandler(index)}>{item}
           </Button>
         )
@@ -35,14 +44,15 @@ class Navbar extends Component{
   }
 
   render(){
+    const { navMenuOpen } = this.state;
     return (
       <div className='navbar'>
-        <div className='nav-items'>
+        <Button title={'Expand'} className="menu-btn" tabIndex={-1} onClick={() => this.toggleExpandMenu()}>
+          <FaBars size={20}/ >
+        </Button>
+        <div className={`nav-items ${navMenuOpen ? '' : 'hidden'}`}>
           {this.renderNavbarItems()}
         </div>
-        <Button title={'Expand'} className="hamburger" tabIndex={-1} onClick={() => alert('expand')}>
-          <FaBars/ >
-        </Button>
       </div>
     )
   }
