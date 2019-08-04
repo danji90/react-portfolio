@@ -3,6 +3,7 @@ import OLMap  from 'ol/Map';
 import BasicMap from '../../../node_modules/react-spatial/components/BasicMap';
 import ConfigReader from '../../../node_modules/react-spatial/ConfigReader';
 import LayerService from '../../../node_modules/react-spatial/LayerService';
+import  '../../../node_modules/react-spatial//themes/default/index.scss';
 
 import './LifeMap.scss'
 
