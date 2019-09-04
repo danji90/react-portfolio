@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import OLMap  from 'ol/Map';
 import BasicMap from '../../../node_modules/react-spatial/components/BasicMap';
-import ConfigReader from '../../../node_modules/react-spatial/ConfigReader';
-import LayerService from '../../../node_modules/react-spatial/LayerService';
+import Layer from '../../../node_modules/react-spatial/Layer';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM.js';
 import  '../../../node_modules/react-spatial//themes/default/index.scss';
 
 import './LifeMap.scss'
@@ -10,30 +10,27 @@ import './LifeMap.scss'
 class LifeMap extends Component{
   constructor(props){
     super(props)
-    const layerConf = [{
-      name: 'OSM Baselayer',
-      visible: true,
-      copyright: 'OSM Contributors',
-      data: {
-        type: 'xyz',
-        url: 'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      },
-    }];
-    this.map = new OLMap();
-    this.layers = ConfigReader.readConfig(this.map, layerConf);
-    this.layerService = new LayerService(this.layers);
     this.state = {};
+    this.layers = [
+      new Layer({
+        name: 'OSM layer',
+        olLayer: new TileLayer({
+          source: new OSM({
+            url: "https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          }),
+        }),
+      }),
+    ];
   }
 
   render(){
-    const center = [11, 46];
     return (
       <div className='lifemap-container'>
         <h2>Life map</h2>
         <BasicMap
+          center={[843119.531243, 6111943.000197]}
+          zoom={4}
           map={this.map}
-          center={center}
-          zoom={5}
           layers={this.layers}
         />
       </div>
