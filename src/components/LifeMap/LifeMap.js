@@ -18,9 +18,9 @@ class LifeMap extends Component{
   constructor(props){
     super(props)
 
-    const education = new GeoJSON().readFeatures(mapData.education)
-    const work = new GeoJSON().readFeatures(mapData.work)
-    const residence = new GeoJSON().readFeatures(mapData.residence)
+    const education = new GeoJSON({featureProjection: 'EPSG:3857',}).readFeatures(mapData.education)
+    const work = new GeoJSON({featureProjection: 'EPSG:3857',}).readFeatures(mapData.work)
+    const residence = new GeoJSON({featureProjection: 'EPSG:3857',}).readFeatures(mapData.residence)
 
     // Map Layers
     this.layers = [
@@ -52,6 +52,20 @@ class LifeMap extends Component{
         source: new VectorSource({
           format: new GeoJSON(),
           features: education,
+        })
+      }),
+      new VectorLayer({
+        title: 'Work',
+        source: new VectorSource({
+          format: new GeoJSON(),
+          features: work,
+        })
+      }),
+      new VectorLayer({
+        title: 'Residence',
+        source: new VectorSource({
+          format: new GeoJSON(),
+          features: residence,
         })
       })
     ]
