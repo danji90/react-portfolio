@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import Home from '../Home/Home';
 import AboutMe from '../AboutMe/AboutMe';
 import BasicInfo from '../BasicInfo/BasicInfo';
+import Education from '../Education/Education';
 import DropDown from '../DropDown/DropDown';
 import LifeMap from '../LifeMap/LifeMap';
 import Projects from '../Projects/Projects';
@@ -20,14 +21,12 @@ class Portfolio extends Component {
     }
   }
   render () {
-    const { sections } = this.props;
-    console.log(sections);
-    
+    const { sections } = this.props;    
     return (
       <>
       <header>
         <Navbar tabItems={sections.filter(section => section.tab)} />
-        <DropDown />
+        {/* <DropDown /> */}
       </header>
       <Home section={sections.find(section => section.id === 'home')}/>
       <div className="app-content">
@@ -45,6 +44,9 @@ class Portfolio extends Component {
         <div className="columns">
           <div className="column-primary">
             <Projects section={sections.find(section => section.id === 'projects')}/>
+          </div>
+          <div className="column-secondary">
+            <Education section={sections.find(section => section.id === 'basic')}/>
           </div>
         </div>
       </div>

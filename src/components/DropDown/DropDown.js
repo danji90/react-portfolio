@@ -1,7 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Button from '../../../node_modules/@geops/react-ui/components/Button';
-import { setActiveSection, setXpOpen } from '../../model/actions';
+import Button from '@geops/react-ui/components/Button';
+import {
+  setActiveSection,
+  setXpOpen,
+  setMenuOpen,
+} from '../../model/actions';
 import './DropDown.scss';
 
 function DropDown(props) {
@@ -9,21 +13,32 @@ function DropDown(props) {
   const sections = useSelector(state => state.sections)
   const dispatch = useDispatch()
   
-  return xpOpen ? (
-    <div className="dropdown-container">
-      <div className="dropdown-menu-item">
-        <Button
-          key={0}
-          title="Life Map"
-          onClick={() => {
-            dispatch(setActiveSection(sections.find(section => section.id === 'lifeMap')));
-            dispatch(setXpOpen(false));
-          }}>
-          Life Map
-        </Button>
-      </div>
-    </div>
-  ) : null
+  return (
+    <>
+      <Button
+        key="lifeMap"
+        title="Life Map"
+        className={`dropdown-menu-item${!xpOpen ? ' hidden' : ''}`}
+        onClick={() => {
+          dispatch(setActiveSection(sections.find(section => section.id === 'lifeMap')));
+          dispatch(setXpOpen(false));
+          dispatch(setMenuOpen(false));
+        }}>
+        Life Map
+      </Button>
+      <Button
+        key="education"
+        title="Education"
+        className={`dropdown-menu-item${!xpOpen ? ' hidden' : ''}`}
+        onClick={() => {
+          dispatch(setActiveSection(sections.find(section => section.id === 'education')));
+          dispatch(setXpOpen(false));
+          dispatch(setMenuOpen(false));
+        }}>
+        Education
+      </Button>
+    </> 
+  );
 }
 
 export default DropDown;

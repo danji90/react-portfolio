@@ -1,5 +1,4 @@
-.lifemap-container {
-  background-color: white;
+.lifemap {
   max-height: 600px;
   padding: 10px;
 }
@@ -72,4 +71,15 @@
 .ol-layerswitcher-popup li:hover {
   background:rgba(0, 60, 136, 0.9);
 	color:#fff;
+}
+
+@media screen and (max-width: 1000px) {
+  .lifemap {
+	height: auto;
+	padding: 10px 0 15px 0 !important;
+
+	h2 {
+	  padding-left: 10px;
+	}
+  }	
 }

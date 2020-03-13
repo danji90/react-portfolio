@@ -1,14 +1,14 @@
 import React from 'react';
-import { FaBirthdayCake } from '../../../node_modules/react-icons/fa';
-import { FaHome } from '../../../node_modules/react-icons/fa';
-import { FaPhone } from '../../../node_modules/react-icons/fa';
-import { MdEmail } from '../../../node_modules/react-icons/md';
+import { FaBirthdayCake } from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 import './BasicInfo.scss'
 
 function BasicInfo() {
   return (
-    <div className="basic-info-container">
+    <div className="basic-info container">
       <h2>Basic Information</h2>
       <div className="basic-info-content">
         <ul>

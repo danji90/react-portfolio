@@ -1,0 +1,27 @@
+.education {
+  height: auto;
+
+  .education-item {
+    margin-bottom: 10px;
+
+    .education-item-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .education-item-detail {
+      margin-left: 50px;
+      padding: 4px 0 4px 0;
+    }
+  }
+
+  svg {
+    margin: 10px;
+  }
+
+  .education-content {
+    h2 {
+      margin: 10px;
+    }
+  }
+}

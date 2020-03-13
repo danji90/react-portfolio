@@ -1,17 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
-import Button from '../../../node_modules/@geops/react-ui/components/Button';
-import { FaLinkedinIn } from '../../../node_modules/react-icons/fa';
-import { FaGithubAlt } from '../../../node_modules/react-icons/fa';
-import { FaFilePdf } from '../../../node_modules/react-icons/fa';
-import { FaPaperPlane } from '../../../node_modules/react-icons/fa';
+import Button from '@geops/react-ui/components/Button';
+import { FaLinkedinIn } from 'react-icons/fa';
+import { FaGithubAlt } from 'react-icons/fa';
+import { FaFilePdf } from 'react-icons/fa';
+import { FaPaperPlane } from 'react-icons/fa';
 
 import './Home.scss'
 import portrait from '../../assets/images/daniel1.jpg'
 
 function Home(props) {
+  const section = useSelector(state => state.sections).find(section => section.id === 'home');
   return (
-    <div className="home-container" id={props.section.id}>
+    <div className="home container" id={section.id}>
       <div className="portrait-container">
         <img src={portrait} alt='error'></img>
       </div>

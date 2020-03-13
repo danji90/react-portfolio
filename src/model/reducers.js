@@ -43,6 +43,12 @@ const initialState = {
       tab: true,
     },
     {
+      id: 'education',
+      name: 'Education',
+      nav: 'experience',
+      tab: false,
+    },
+    {
       id: 'lifeMap',
       name: 'Life Map',
       nav: 'experience',
@@ -54,7 +60,35 @@ const initialState = {
       nav: 'github',
       tab: true,
     },
-  ]
+  ],
+  educationItems: [
+    {
+      title: 'MSc Geospatial Technologies',
+      details: {
+        facility: 'Universität Münster - Universitat Jaume I - Universidade Nova de Lisboa',
+        note_1: 'Erasmus Mundus Joint Master Degree (2017-2019)',
+        note_2: 'Erasmus Mundus Scholarship Holder',
+        thesis: 'Thesis: Interoperability Enhancement of IoT Sensor Network Applications for Environmental Monitoring Using Open Web Standards',
+      }
+    },
+    {
+      title: 'BSc Environmental Systems Sciences - Focus on Geography',
+      details: {
+        facility: 'Universität Graz (2011-2016)',
+        thesis: 'Thesis: Investigating rockfall at alpine rock walls using Terrestial Laser Scanning'
+      }
+    },
+    {
+      title: 'Certificate in English Language Teaching to Adults (CELTA)',
+      details: {
+        facility: 'ITTC Bournemouth (July 2015)',
+      }
+    },
+    {
+      title: 'Certificate of Bilingualism (Italian-German): Patentino A',
+      details: {}
+    }
+  ],
 }
 
 export default function app(state = initialState, action) {

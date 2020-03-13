@@ -1,15 +1,15 @@
-.dropdown-container {
-  display: flex;
-  justify-content: center;
-  color: #8ade00;
-  position: fixed;
+.dropdown-menu-item {
   background-color: #545454;
-  top: 50px;
-  left: 57.8%;
-  width: 21.2%;
+  color: #8ade00;
+  width: 100%;
+  padding: 13px 0 12px 0;
+  font-size: 15px;
 
-  .dropdown-menu-item {
-    padding: 20px;
+  &.hidden {
+    display: none;
   }
 
+  &:hover {
+    background-color: #7e7e7e;
+  }
 }

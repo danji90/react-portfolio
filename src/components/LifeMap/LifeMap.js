@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BasicMap from '../../../node_modules/react-spatial/components/BasicMap';
+import BasicMap from 'react-spatial/components/BasicMap';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 import VectorSource from 'ol/source/Vector';
@@ -12,7 +12,7 @@ import Icon from 'ol/style/Icon';
 import Map from 'ol/Map';
 import LayerPopup from 'ol-ext/control/LayerPopup';
 import GeoJSON from 'ol/format/GeoJSON';
-import '../../../node_modules/react-spatial/themes/default/index.scss';
+import 'react-spatial/themes/default/index.scss';
 
 import './LifeMap.scss';
 import { FaGraduationCap } from "../../../node_modules/react-icons/fa";
@@ -96,10 +96,8 @@ class LifeMap extends Component {
 
   render(props) {
     const { section } = this.props
-    console.log(section);
-    
     return (
-    <div className='lifemap-container' id={section.id}>
+    <div className='lifemap container' id={section.id}>
       <h2>Life map</h2>
       <BasicMap zoom={2} viewOptions={{
           minZoom: 2

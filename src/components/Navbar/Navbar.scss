@@ -6,8 +6,9 @@
   color: white;
   background-color: #282c34;
   width: 100%;
-  max-height: 50px;
+  height: auto;
   z-index: 100000;
+  font-size: 18px;
 }
 
 .menu-btn {
@@ -19,22 +20,41 @@
     display: flex;
     align-items: center;
     text-align: center;
+    height: 50px;
     width: 100%;
+
+    .active {
+      background-color: #545454;
+      color: #8ade00;
+    }
 
     .navbar-item {
       background-color: #282c34;
-      padding: 20px;
       flex-grow: 5;
       cursor: pointer;
       outline: none;
-
-      &.active {
-        background-color: #545454;
-        color: #8ade00;
-      }
+      padding: 13px 0 13px 0;
 
       &:hover {
         background-color: #545454;
+      }
+    }
+
+    .navbar-item-experience {
+      text-align: center;
+      background-color: #282c34;
+      flex-grow: 5;
+
+      &.open {
+        margin-top: 90px;
+      }
+
+      .experience-button {
+        padding: 13px 0 13px 0;
+
+        &:hover {
+          background-color: #545454;
+        }
       }
     }
   }
@@ -71,6 +91,20 @@
 
         &:hover {
           background-color: #545454;
+        }
+      }
+
+      .navbar-item-experience {
+        text-align: center;
+        background-color: #282c34;
+        flex-grow: 5;
+  
+        .experience-button {
+          padding: 13px 0 12px 0;
+  
+          &:hover {
+            background-color: #545454;
+          }
         }
       }
     }

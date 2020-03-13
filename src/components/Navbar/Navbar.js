@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { FaBars } from '../../../node_modules/react-icons/fa';
-import Button from '../../../node_modules/@geops/react-ui/components/Button';
+import { FaBars } from 'react-icons/fa';
+import Button from '@geops/react-ui/components/Button';
 import { setMenuOpen, setActiveSection, setXpOpen } from '../../model/actions';
 
 import './Navbar.scss'
+import DropDown from '../DropDown/DropDown';
 
 class Navbar extends Component{
   constructor(props){
     super(props)
-    this.renderNavbarItems = this.renderNavbarItems.bind(this);
     this.state = {
       navMenuOpen: false,
     };
@@ -24,7 +24,9 @@ class Navbar extends Component{
       xpOpen,
     } = this.props;
     if (section.id === 'experience') {
+      dispatchSetActiveSection(section);
       dispatchSetXpOpen(!xpOpen);
+      return;
     } else {
       dispatchSetXpOpen(false);
     }
@@ -37,24 +39,45 @@ class Navbar extends Component{
     dispatchSetMenuOpen(!menuOpen)
   };
 
+  renderXpTab(tabItems, item, index) {
+    const { activeSection, xpOpen } = this.props;
+    return (
+      <div key={item.id} className={`navbar-item-experience ${xpOpen ? ' open' : ''}`}>
+        <Button
+            key={item.id}
+            title={item.name}
+            active={item.nav===activeSection.nav}
+            className={`experience-button ${item.nav===activeSection.nav ? ' active' : ''}`}
+            onClick={() => {
+              this.tabClickHandler(index, tabItems[index]);
+            }}>
+            {item.name}
+          </Button>
+          {/* <div className={`experience-button ${item.nav===activeSection.nav ? ' active' : ''}`}>Hello World</div> */}
+          <DropDown />
+      </div>
+    )
+  }
+
   renderNavbarItems(tabItems){
     const { activeSection } = this.props;   
     return (
       tabItems.map((item, index) => {
-        
+        if (item.id === 'experience') {
+          return this.renderXpTab(tabItems, item, index)
+        }
         return (
-          <>
-            <Button
-              key={index}
-              title={item.name}
-              active={item.nav===activeSection.nav}
-              className={`navbar-item ${item.nav===activeSection.nav ? ' active' : ''}`}
-              onClick={() => {
-                this.tabClickHandler(index, tabItems[index]);
-              }}>
-              {item.name}
-            </Button>
-          </>
+          <Button
+            key={item.id}
+            title={item.name}
+            active={item.nav===activeSection.nav}
+            className={`navbar-item  ${item.nav===activeSection.nav ? ' active' : ''}`}
+            onClick={() => {
+              this.tabClickHandler(index, tabItems[index]);
+              console.log(index);
+            }}>
+            {item.name}
+          </Button>
         )
       })
     )
