@@ -14,7 +14,7 @@
             "timestamp": [
                 ["2015-07-01T00:00:00.000Z", "2015-08-01T00:00:00.000Z"]
             ],
-            "icon": "<i class='fa fa-graduation-cap fa-2x'></i>",
+            "icon": "<img class='fa fa-graduation-cap fa-2x'>",
             "description": "Cambridge assessed teacher training for teaching English as a foreign language, obtained CELTA qualification for student-centered English teaching"
           },
           "geometry": {
@@ -37,7 +37,7 @@
             "timestamp": [
               ["2013-08-08T00:00:00.000Z", "2014-06-04T00:00:00.000Z"]
             ],
-            "icon": "<i class='fa fa-graduation-cap fa-2x'></i>",
+            "icon": "<img class='fa fa-graduation-cap fa-2x'>",
             "description": "International exchange year with the Joint Study programme, attended courses in GIS, Dynamic systems and Environmental Systems Simulation, Climatology, Environmental Management, Challenges in Golbalisation, Spanish B2-C1"
           },
           "geometry": {
@@ -60,7 +60,7 @@
             "timestamp": [
               ["2011-10-01T00:00:00.000Z", "2016-02-28T00:00:00.000Z"]
             ],
-            "icon": "<i class='fa fa-graduation-cap fa-2x'></i>",
+            "icon": "<img class='fa fa-graduation-cap fa-2x'>",
             "description": "Subjects and skills acquired: Environmental Sciences, Systems Sciences, Mathematics and Statistics, Ecology, Sustainable Development, Interdisciplinary Research, Geoinformatics, Geographical Technologies, GIS, Remote Sensing, Cartography, Physical Geography, Human Geography, Integrative Geography, Spanish B2"
           },
           "geometry": {
@@ -83,7 +83,7 @@
             "timestamp":[
               ["2018-04-01T00:00:00.000Z", "2018-08-08T00:00:00.000Z"]
             ],
-            "icon": "<i class='fa fa-graduation-cap fa-2x'></i>",
+            "icon": "<img class='fa fa-graduation-cap fa-2x'>",
             "description": "Attendance of second Master semester, attended courses such as Python in GIS, Location-Based Services, Unmanned Aerial Systems, Usage-Centered Design of GIS applications, Advanced Research Methods and Skills, Spatial Data Analysis in R, SenseBox, Project Management"
           },
           "geometry": {
@@ -106,7 +106,7 @@
             "timestamp": [
               ["2017-09-13T00:00:00.000Z", "2019-03-04T00:00:00.000Z"]
           ],
-            "icon": "<i class='fa fa-graduation-cap fa-2x'></i>",
+            "icon": "<img class='fa fa-graduation-cap fa-2x'>",
             "description": "Attendance of first and third Master semesters, writing of Master thesis, attended courses such as Programming, Spatial Databases, Software Engineering, Applied Mathematics and Statistics, Spatial Analysis, Spatial Data Visualisation, Web and Mobile GIS development, Remote sensing, GIS Servers, Spatial Data Infrastructures"
           },
           "geometry": {
@@ -129,7 +129,7 @@
             "timestamp": [
               ["2018-12-07T00:00:00.000Z", "2018-12-10T00:00:00.000Z"]
             ],
-            "icon": "<i class='fa fa-graduation-cap fa-2x'></i>",
+            "icon": "<img class='fa fa-graduation-cap fa-2x'>",
             "description": "GeoMundus 2018 Conference"
           },
           "geometry": {
@@ -157,7 +157,7 @@
           "timestamp": [
             ["2016-03-07T00:00:00.000Z", "2017-07-01T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-briefcase fa-2x'></i>",
+          "icon": "<img class='fas fa-briefcase fa-2x'>",
           "description": "Researcher in Technology for Environmental Monitoring, OGC Sensor Web Standards and geospatial data management and processing"
         },
         "geometry": {
@@ -178,7 +178,7 @@
           "link": "https://geographie.uni-graz.at/en/",
           "title": "Teaching Assistant",
           "timestamp": [["2015-03-04T00:00:00.000Z", "2015-07-01T00:00:00.000Z"]],
-          "icon": "<i class='fas fa-briefcase fa-2x'></i>",
+          "icon": "<img class='fas fa-briefcase fa-2x'>",
           "description": "Teaching assistant in Technical English for Geographers, teaching geographical terminology to geography students"
         },
         "geometry": {
@@ -204,7 +204,7 @@
             ["2016-07-04T00:00:00.000Z", "2016-08-01T00:00:00.000Z"],
             ["2016-03-04T00:00:00.000Z", "2016-08-01T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-briefcase fa-2x'></i>",
+          "icon": "<img class='fas fa-briefcase fa-2x'>",
           "description": "Language Coordinator for English summer camps for 8-12 year-olds, teaching English as a foreign language to adults at A2 & B1 levels"
         },
         "geometry": {
@@ -227,7 +227,7 @@
           "timestamp": [
             ["2013-11-04T00:00:00.000Z", "2014-05-01T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-briefcase fa-2x'></i>",
+          "icon": "<img class='fas fa-briefcase fa-2x'>",
           "description": "Teaching English as a foreign language to adults at A1 & A2 levels"
         },
         "geometry": {
@@ -250,7 +250,7 @@
           "timestamp": [
             ["2009-02-02T00:00:00.000Z", "2009-02-25T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-briefcase fa-2x'></i>",
+          "icon": "<img class='fas fa-briefcase fa-2x'>",
           "description": "One month of voluntary work in Cabuya village, teaching at school, help with maintenance of village infrastructure, aid in animal rescue centre"
         },
         "geometry": {
@@ -273,7 +273,7 @@
           "timestamp": [
             ["2019-05-01T00:00:00.000Z", "2019-05-02T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-briefcase fa-2x'></i>",
+          "icon": "<img class='fas fa-briefcase fa-2x'>",
           "description": "Frontend UI development for mainly mobility and traffic applications"
         },
         "geometry": {
@@ -299,7 +299,7 @@
             ["1990-09-13T00:00:00.000Z", "2011-09-25T00:00:00.000Z"],
             ["2016-02-13T00:00:00.000Z", "2017-08-25T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-home fa-2x'></i>",
+          "icon": "<img class='fas fa-home fa-2x'>",
           "description": "Place of birth; primary, secondary and high school; family"
         },
         "geometry": {
@@ -319,7 +319,7 @@
           "timestamp": [
             ["2013-08-08T00:00:00.000Z", "2014-05-25T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-home fa-2x'></i>",
+          "icon": "<img class='fas fa-home fa-2x'>",
           "description": "Residence during an International Student Exchange (Bachelor) in Mexico"
         },
         "geometry": {
@@ -339,7 +339,7 @@
           "timestamp": [
             ["1990-09-13T00:00:00.000Z", "2018-03-01T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-home fa-2x'></i>",
+          "icon": "<img class='fas fa-home fa-2x'>",
           "description": "Yearly visits and stays due to family, schooling extension in local primary school between age 6 and 9"
         },
         "geometry": {
@@ -360,7 +360,7 @@
             ["2011-09-25T00:00:00.000Z", "2013-08-01T00:00:00.000Z"],
             ["2014-03-15T00:00:00.000Z", "2016-02-28T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-home fa-2x'></i>",
+          "icon": "<img class='fas fa-home fa-2x'>",
           "description": "Residence during Bachelor study period"
         },
         "geometry": {
@@ -381,7 +381,7 @@
             ["2017-09-01T00:00:00.000Z", "2018-03-01T00:00:00.000Z"],
             ["2018-09-07T00:00:00.000Z", "2019-03-05T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-home fa-2x'></i>",
+          "icon": "<img class='fas fa-home fa-2x'>",
           "description": "Residence during the first and third Master semesters"
         },
         "geometry": {
@@ -401,7 +401,7 @@
           "timestamp":[
             ["2018-03-20T00:00:00.000Z", "2018-08-10T00:00:00.000Z"]
           ],
-          "icon": "<i class='fas fa-home fa-2x'></i>",
+          "icon": "<img class='fas fa-home fa-2x'>",
           "description": "Residence during second Master semester"
         },
         "geometry": {

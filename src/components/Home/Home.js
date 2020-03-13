@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import Button from '../../../node_modules/react-spatial/components/Button';
+import Button from '../../../node_modules/@geops/react-ui/components/Button';
 import { FaLinkedinIn } from '../../../node_modules/react-icons/fa';
 import { FaGithubAlt } from '../../../node_modules/react-icons/fa';
 import { FaFilePdf } from '../../../node_modules/react-icons/fa';
@@ -9,9 +9,9 @@ import { FaPaperPlane } from '../../../node_modules/react-icons/fa';
 import './Home.scss'
 import portrait from '../../assets/images/daniel1.jpg'
 
-function Home() {
+function Home(props) {
   return (
-    <div className="home-container">
+    <div className="home-container" id={props.section.id}>
       <div className="portrait-container">
         <img src={portrait} alt='error'></img>
       </div>

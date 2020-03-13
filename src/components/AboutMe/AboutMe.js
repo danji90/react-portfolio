@@ -1,11 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 import './AboutMe.scss'
 
-function AboutMe() {
+function AboutMe(props) {
+  console.log(props);
+  
   return (
-    <div className="about-container">
+    <div className="about-container" id={props.section.id}>
       <h2>About Me</h2>
       <p>Hi, I'm Daniel! I am from Bolzano, a small town in the Italian Alps. Bolzano province is bilingual and a melting pot between Italian and Austrian culture due to its history. My father is British, so one could say I am a half-British, German-speaking Italian, moulded by a multicultural and multilingual environment.</p>
       <p>In the professional and academic world I describe myself as a passionate geo-information researcher, developer and tech lover. With an environmental sciences and geographical technology background, my main interests lie in nature, environmental monitoring, sensors, open data and open hardware, the Internet of Things, interoperability and geospatial web development.</p>

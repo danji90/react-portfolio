@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@geops/react-ui": "^1.0.7",
     "node-sass": "^4.12.0",
     "ol": "^5.3.3",
     "ol-ext": "^3.1.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
+    "react-redux": "^7.2.0",
     "react-scripts": "3.0.1",
-    "react-spatial": "^0.0.14-beta.52"
+    "react-spatial": "^0.2.8",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",

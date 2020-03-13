@@ -1,66 +1,95 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { FaBars } from '../../../node_modules/react-icons/fa';
-import Button from '../../../node_modules/react-spatial/components/Button';
+import Button from '../../../node_modules/@geops/react-ui/components/Button';
+import { setMenuOpen, setActiveSection, setXpOpen } from '../../model/actions';
 
 import './Navbar.scss'
 
 class Navbar extends Component{
   constructor(props){
     super(props)
-    this.activeTab = undefined;
     this.renderNavbarItems = this.renderNavbarItems.bind(this);
     this.state = {
-      activeTab: undefined,
       navMenuOpen: false,
     };
-    this.tabClickHandler = this.tabClickHandler.bind(this)
+    this.tabClickHandler = this.tabClickHandler.bind(this);
   }
 
-  tabClickHandler(selected) {
-    this.setState({ activeTab: selected });
+  tabClickHandler(tabIndex, section) {
+    const { 
+      dispatchSetActiveSection,
+      dispatchSetMenuOpen,
+      dispatchSetXpOpen,
+      xpOpen,
+    } = this.props;
+    if (section.id === 'experience') {
+      dispatchSetXpOpen(!xpOpen);
+    } else {
+      dispatchSetXpOpen(false);
+    }
+    dispatchSetActiveSection(section);
+    dispatchSetMenuOpen(false);
   };
 
   toggleExpandMenu() {
-    const { navMenuOpen } = this.state;
-    this.setState({navMenuOpen: !navMenuOpen});
-  }
+    const { dispatchSetMenuOpen, menuOpen } = this.props;
+    dispatchSetMenuOpen(!menuOpen)
+  };
 
-  renderNavbarItems(){
-    const items = ['Home', 'About Me', 'Projects', 'Experience', 'My Github']
-    const { activeTab } = this.state;
+  renderNavbarItems(tabItems){
+    const { activeSection } = this.props;   
     return (
-      items.map((item, index) => {
+      tabItems.map((item, index) => {
+        
         return (
-          <Button
-            key={index}
-            title={item}
-            active={index===activeTab}
-            className={`navbar-item ${index===activeTab ? ' active' : ''}`}
-            onClick={(item) => {
-              this.setState({navMenuOpen: false});
-              this.tabClickHandler(index)
-            }}>
-            {item}
-          </Button>
+          <>
+            <Button
+              key={index}
+              title={item.name}
+              active={item.nav===activeSection.nav}
+              className={`navbar-item ${item.nav===activeSection.nav ? ' active' : ''}`}
+              onClick={() => {
+                this.tabClickHandler(index, tabItems[index]);
+              }}>
+              {item.name}
+            </Button>
+          </>
         )
       })
     )
   }
 
-  render(){
-    const { navMenuOpen } = this.state;
+  render(props){
+    const { tabItems, menuOpen } = this.props;
     return (
       <div className='navbar'>
         <Button title={'Expand'} className="menu-btn" tabIndex={-1} onClick={() => this.toggleExpandMenu()}>
-          <FaBars size={20}/ >
+          <FaBars size={20} />
         </Button>
-        <div className={`nav-items ${navMenuOpen ? '' : 'hidden'}`}>
-          {this.renderNavbarItems()}
+        <div className={`nav-items ${menuOpen ? '' : 'hidden'}`}>
+          {this.renderNavbarItems(tabItems)}
         </div>
       </div>
     )
   }
-
 }
 
-export default Navbar;
+
+const mapStateToProps = state => ({
+  menuOpen: state.menuOpen,
+  activeSection: state.activeSection,
+  xpOpen: state.xpOpen,
+});
+
+const mapDispatchToProps = {
+  dispatchSetMenuOpen: setMenuOpen,
+  dispatchSetActiveSection: setActiveSection,
+  dispatchSetXpOpen: setXpOpen,
+};
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Navbar);

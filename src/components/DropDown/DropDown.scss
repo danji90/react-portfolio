@@ -1,0 +1,15 @@
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  color: #8ade00;
+  position: fixed;
+  background-color: #545454;
+  top: 50px;
+  left: 57.8%;
+  width: 21.2%;
+
+  .dropdown-menu-item {
+    padding: 20px;
+  }
+
+}

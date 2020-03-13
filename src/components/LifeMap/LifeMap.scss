@@ -4,9 +4,10 @@
   padding: 10px;
 }
 
-.tm-map {
+.rs-map {
   min-height: 520px;
   max-height: 520px;
+  z-index: -1;
 }
 
 .ol-control.ol-layerswitcher-popup {
