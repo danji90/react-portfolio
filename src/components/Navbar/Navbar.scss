@@ -74,6 +74,11 @@
       display: block;
       transition: height 2s;
 
+      .active {
+        background-color: #545454;
+        color: #8ade00;
+      }
+
       &.hidden {
         display: none;
       }
@@ -84,10 +89,6 @@
         outline: none;
         padding: 10px;
         text-align: center;
-
-        &.active {
-          color: green;
-        }
 
         &:hover {
           background-color: #545454;
@@ -110,7 +111,7 @@
     }
 
     .menu-btn {
-      border: 1px solid green;
+      border: 1.5px solid #8ade00;;
       border-radius: 5px;
       display: block;
       text-align: center;

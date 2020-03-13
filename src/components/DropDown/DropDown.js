@@ -13,12 +13,12 @@ function DropDown(props) {
   const sections = useSelector(state => state.sections)
   const dispatch = useDispatch()
   
-  return (
+  return xpOpen ? (
     <>
       <Button
         key="lifeMap"
         title="Life Map"
-        className={`dropdown-menu-item${!xpOpen ? ' hidden' : ''}`}
+        className={`dropdown-menu-item`}
         onClick={() => {
           dispatch(setActiveSection(sections.find(section => section.id === 'lifeMap')));
           dispatch(setXpOpen(false));
@@ -29,7 +29,7 @@ function DropDown(props) {
       <Button
         key="education"
         title="Education"
-        className={`dropdown-menu-item${!xpOpen ? ' hidden' : ''}`}
+        className={`dropdown-menu-item`}
         onClick={() => {
           dispatch(setActiveSection(sections.find(section => section.id === 'education')));
           dispatch(setXpOpen(false));
@@ -38,7 +38,7 @@ function DropDown(props) {
         Education
       </Button>
     </> 
-  );
+  ) : null;
 }
 
 export default DropDown;

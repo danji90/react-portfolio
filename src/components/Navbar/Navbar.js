@@ -9,7 +9,7 @@ import DropDown from '../DropDown/DropDown';
 
 class Navbar extends Component{
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       navMenuOpen: false,
     };
@@ -53,7 +53,6 @@ class Navbar extends Component{
             }}>
             {item.name}
           </Button>
-          {/* <div className={`experience-button ${item.nav===activeSection.nav ? ' active' : ''}`}>Hello World</div> */}
           <DropDown />
       </div>
     )
@@ -74,7 +73,6 @@ class Navbar extends Component{
             className={`navbar-item  ${item.nav===activeSection.nav ? ' active' : ''}`}
             onClick={() => {
               this.tabClickHandler(index, tabItems[index]);
-              console.log(index);
             }}>
             {item.name}
           </Button>
