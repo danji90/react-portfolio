@@ -25,7 +25,7 @@
 
     .active {
       background-color: #545454;
-      color: #8ade00;
+      color: #7dc900;
     }
 
     .navbar-item {
@@ -51,6 +51,13 @@
 
       .experience-button {
         padding: 13px 0 13px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          padding: 2px;
+        }
 
         &:hover {
           background-color: #545454;
@@ -76,7 +83,7 @@
 
       .active {
         background-color: #545454;
-        color: #8ade00;
+        color: #7dc900;
       }
 
       &.hidden {
@@ -102,6 +109,13 @@
   
         .experience-button {
           padding: 13px 0 12px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            padding: 4px;
+          }
   
           &:hover {
             background-color: #545454;
@@ -111,7 +125,7 @@
     }
 
     .menu-btn {
-      border: 1.5px solid #8ade00;;
+      border: 1.5px solid #7dc900;;
       border-radius: 5px;
       display: block;
       text-align: center;

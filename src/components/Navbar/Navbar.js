@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { FaBars } from 'react-icons/fa';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { IoMdArrowDropup } from 'react-icons/io';
 import Button from '@geops/react-ui/components/Button';
 import { setMenuOpen, setActiveSection, setXpOpen } from '../../model/actions';
 
@@ -10,9 +12,6 @@ import DropDown from '../DropDown/DropDown';
 class Navbar extends Component{
   constructor(props){
     super(props);
-    this.state = {
-      navMenuOpen: false,
-    };
     this.tabClickHandler = this.tabClickHandler.bind(this);
   }
 
@@ -52,12 +51,13 @@ class Navbar extends Component{
               this.tabClickHandler(index, tabItems[index]);
             }}>
             {item.name}
+            {xpOpen ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
           </Button>
           <DropDown />
       </div>
     )
   }
-
+  
   renderNavbarItems(tabItems){
     const { activeSection } = this.props;   
     return (

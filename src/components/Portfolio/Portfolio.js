@@ -7,21 +7,40 @@ import BasicInfo from '../BasicInfo/BasicInfo';
 import Education from '../Education/Education';
 import LifeMap from '../LifeMap/LifeMap';
 import Projects from '../Projects/Projects';
-import { setMenuOpen, setXpOpen } from '../../model/actions';
+import { setMenuOpen, setXpOpen, setActiveSection } from '../../model/actions';
 
 import './Portfolio.scss';
 
 class Portfolio extends Component {
-  constructor() {
-    super();
-    this.pageRef = createRef()
+  constructor(props) {
+    super(props);
+    this.myRef = createRef();
+    this.state = {scrollTop: 0};
     this.closeMenu = this.closeMenu.bind(this);
+    this.scrollUpdate = this.scrollUpdate.bind(this)
   }
 
-  closeMenu(event) {
+  closeMenu() {
     const { dispatchSetMenuOpen, dispatchSetXpOpen } = this.props;
-      dispatchSetMenuOpen(false);
-      dispatchSetXpOpen(false);
+    dispatchSetMenuOpen(false);
+    dispatchSetXpOpen(false);
+  }
+
+  scrollUpdate() {
+    const { dispatchSetActiveSection, sections } = this.props;
+    console.log(window.scrollY);
+    if (window.scrollY === 0) {
+      dispatchSetActiveSection(sections.find(section => section.id === 'home'));
+    }
+    
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', this.scrollUpdate)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.scrollUpdate)
   }
 
   componentDidUpdate(prevProps) {
@@ -33,14 +52,14 @@ class Portfolio extends Component {
     }
   }
 
-  render () {
-    const { sections } = this.props;    
+  render (props) {
+    const { sections } = this.props;
     return (
       <>
         <header>
           <Navbar tabItems={sections.filter(section => section.tab)} />
         </header>
-        <div onClick={this.closeMenu}>
+        <div onClick={this.closeMenu} >
           <Home section={sections.find(section => section.id === 'home')}/>
           <div className="app-content">
             <div className="columns">
@@ -57,6 +76,7 @@ class Portfolio extends Component {
             <div className="columns">
               <div className="column-primary">
                 <Projects section={sections.find(section => section.id === 'projects')}/>
+                {/* <ScrollAwareDiv /> */}
               </div>
               <div className="column-secondary">
                 <Education section={sections.find(section => section.id === 'basic')}/>
@@ -76,6 +96,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
+  dispatchSetActiveSection: setActiveSection,
   dispatchSetMenuOpen: setMenuOpen,
   dispatchSetXpOpen: setXpOpen,
 };
