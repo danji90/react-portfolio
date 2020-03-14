@@ -48,7 +48,7 @@ class Portfolio extends Component {
     const { activeSection } = this.props;
     console.log(activeSection);
     const anchor = document.querySelector(`#${activeSection.id}`)
-    if (anchor  && (prevProps.activeSection !== activeSection)) {
+    if (anchor && (prevProps.activeSection !== activeSection)) {
       anchor.scrollIntoView({ behavior: 'smooth', inline: 'end' })
     }
   }
@@ -71,17 +71,16 @@ class Portfolio extends Component {
                 <BasicInfo section={sections.find(section => section.id === 'basic')}/>
               </div>
             </div>
-            <div className="map-section">
-              <LifeMap section={sections.find(section => section.id === 'lifeMap')} />
-            </div>
             <div className="columns">
               <div className="column-primary">
                 <Projects section={sections.find(section => section.id === 'projects')}/>
-                {/* <ScrollAwareDiv /> */}
               </div>
               <div className="column-secondary">
                 <Education section={sections.find(section => section.id === 'basic')}/>
               </div>
+            </div>
+            <div className="map-section">
+              <LifeMap section={sections.find(section => section.id === 'lifeMap')} />
             </div>
           </div>
         </div>

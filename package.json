@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@geops/react-ui": "^1.0.7",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.12.0",
     "ol": "^5.3.3",
     "ol-ext": "^3.1.6",
