@@ -29,6 +29,7 @@ class Portfolio extends Component {
   scrollUpdate() {
     const { dispatchSetActiveSection, sections } = this.props;
     console.log(window.scrollY);
+    // TODO: Implement for all tabs once all sections are ready
     if (window.scrollY === 0) {
       dispatchSetActiveSection(sections.find(section => section.id === 'home'));
     }
