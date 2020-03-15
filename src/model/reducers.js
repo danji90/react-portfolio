@@ -226,7 +226,6 @@ const initialState = {
       images: [
         {
           name: 'elippss.jpg',
-          name: 'elippss.jpg'
         },
         {
           name: 'elippss1.jpg'
