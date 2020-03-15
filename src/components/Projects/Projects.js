@@ -52,10 +52,16 @@ const renderProject = (projectData, index, projectsCount) => {
             <strong>Tools used: </strong>
             {
               projectData.tools.map((tool, index) => {
-                return tool.webLink ? 
-                (<a key={index} href={tool.webLink} target="_blank">
-                  {`${tool.name}${(index + 1) === projectData.tools.length ? '' : ', '}`}
-                  </a>) : <span>{`${tool.name}${(index + 1) === projectData.tools.length ? '' : ', '}`}</span>
+                return (
+                  <span>
+                    {tool.webLink ? (
+                    <a key={index} href={tool.webLink} target="_blank">
+                      {`${tool.name}`}
+                    </a>
+                    ) : <span>{`${tool.name}`}</span>}
+                    {`${(index + 1) === projectData.tools.length ? '' : ', '}`}
+                  </span>
+                )
               })
             }
           </div>

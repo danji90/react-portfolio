@@ -16,15 +16,15 @@ function DropDown(props) {
   return xpOpen ? (
     <>
       <Button
-        key="lifeMap"
-        title="Life Map"
+        key="skills"
+        title="Skills"
         className={`dropdown-menu-item`}
         onClick={() => {
-          dispatch(setActiveSection(sections.find(section => section.id === 'lifeMap')));
+          // dispatch(setActiveSection(sections.find(section => section.id === 'lifeMap')));
           dispatch(setXpOpen(false));
           dispatch(setMenuOpen(false));
         }}>
-        Life Map
+        Skills
       </Button>
       <Button
         key="education"

@@ -71,6 +71,9 @@ class Portfolio extends Component {
                 <BasicInfo section={sections.find(section => section.id === 'basic')}/>
               </div>
             </div>
+            <div className="map-section">
+              <LifeMap section={sections.find(section => section.id === 'lifeMap')} />
+            </div>
             <div className="columns">
               <div className="column-primary">
                 <Projects section={sections.find(section => section.id === 'projects')}/>
@@ -78,9 +81,6 @@ class Portfolio extends Component {
               <div className="column-secondary">
                 <Education section={sections.find(section => section.id === 'basic')}/>
               </div>
-            </div>
-            <div className="map-section">
-              <LifeMap section={sections.find(section => section.id === 'lifeMap')} />
             </div>
           </div>
         </div>

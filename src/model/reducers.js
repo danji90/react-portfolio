@@ -31,6 +31,12 @@ const initialState = {
       tab: true,
     },
     {
+      id: 'lifeMap',
+      name: 'Life Map',
+      nav: 'lifeMap',
+      tab: true,
+    },
+    {
       id: 'projects',
       name: 'Projects',
       nav: 'projects',
@@ -45,12 +51,6 @@ const initialState = {
     {
       id: 'education',
       name: 'Education',
-      nav: 'experience',
-      tab: false,
-    },
-    {
-      id: 'lifeMap',
-      name: 'Life Map',
       nav: 'experience',
       tab: false,
     },
