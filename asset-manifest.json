@@ -1,18 +1,28 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.3384d6f5.chunk.css",
-    "main.js": "/react-portfolio/static/js/main.f1056715.chunk.js",
-    "main.js.map": "/react-portfolio/static/js/main.f1056715.chunk.js.map",
+    "main.css": "/react-portfolio/static/css/main.e773d1fc.chunk.css",
+    "main.js": "/react-portfolio/static/js/main.24dc1679.chunk.js",
+    "main.js.map": "/react-portfolio/static/js/main.24dc1679.chunk.js.map",
     "runtime~main.js": "/react-portfolio/static/js/runtime~main.f974a8eb.js",
     "runtime~main.js.map": "/react-portfolio/static/js/runtime~main.f974a8eb.js.map",
     "static/css/2.5123c2c1.chunk.css": "/react-portfolio/static/css/2.5123c2c1.chunk.css",
-    "static/js/2.7d7f415c.chunk.js": "/react-portfolio/static/js/2.7d7f415c.chunk.js",
-    "static/js/2.7d7f415c.chunk.js.map": "/react-portfolio/static/js/2.7d7f415c.chunk.js.map",
+    "static/js/2.474f8591.chunk.js": "/react-portfolio/static/js/2.474f8591.chunk.js",
+    "static/js/2.474f8591.chunk.js.map": "/react-portfolio/static/js/2.474f8591.chunk.js.map",
     "index.html": "/react-portfolio/index.html",
-    "precache-manifest.91475e354685250d2ef26fa2aa8784f4.js": "/react-portfolio/precache-manifest.91475e354685250d2ef26fa2aa8784f4.js",
+    "precache-manifest.5a9f6133aa0001cec4cb21e0132f008b.js": "/react-portfolio/precache-manifest.5a9f6133aa0001cec4cb21e0132f008b.js",
     "service-worker.js": "/react-portfolio/service-worker.js",
     "static/css/2.5123c2c1.chunk.css.map": "/react-portfolio/static/css/2.5123c2c1.chunk.css.map",
-    "static/css/main.3384d6f5.chunk.css.map": "/react-portfolio/static/css/main.3384d6f5.chunk.css.map",
-    "static/media/daniel1.jpg": "/react-portfolio/static/media/daniel1.2a6be37f.jpg"
+    "static/css/main.e773d1fc.chunk.css.map": "/react-portfolio/static/css/main.e773d1fc.chunk.css.map",
+    "static/media/daniel1.jpg": "/react-portfolio/static/media/daniel1.2a6be37f.jpg",
+    "static/media/daniel2.jpg": "/react-portfolio/static/media/daniel2.6207640f.jpg",
+    "static/media/elippss.jpg": "/react-portfolio/static/media/elippss.a4f1a48f.jpg",
+    "static/media/elippss1.jpg": "/react-portfolio/static/media/elippss1.406164f7.jpg",
+    "static/media/geomundus.jpg": "/react-portfolio/static/media/geomundus.fc7967e7.jpg",
+    "static/media/geomundus1.jpg": "/react-portfolio/static/media/geomundus1.a2ecec30.jpg",
+    "static/media/mapset.svg": "/react-portfolio/static/media/mapset.3f81a565.svg",
+    "static/media/plan_editor1.png": "/react-portfolio/static/media/plan_editor1.fa55f291.png",
+    "static/media/plan_editor2.png": "/react-portfolio/static/media/plan_editor2.99663b41.png",
+    "static/media/senviro3.jpg": "/react-portfolio/static/media/senviro3.3bab40c6.jpg",
+    "static/media/senviroConnect.jpg": "/react-portfolio/static/media/senviroConnect.e267279f.jpg"
   }
 }
