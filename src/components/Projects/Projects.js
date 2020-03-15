@@ -1,52 +1,84 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 // import PropTypes from 'prop-types';
-
-import image from '../../assets/images/daniel1.jpg'
 
 import './Projects.scss'
 import { useSelector } from 'react-redux';
 
-const renderProject = projectData => {
+const images = require.context('../../assets/images/', true);
+
+const renderLatestProject = (projectData, projectsCount) => {
   return (
-    <div className="project">
-      <div className="project-column-image">
-        {projectData.images.map(image => {
-          const imageLink = image.imageUrl;
-          return (
-            <a href={projectData.webLink} target="_blank">
-              <img src={image.imageUrl} alt="not found" ></img>
-            </a>
-          )
-        })}
-        
-      </div>
-      <div className="project-column-info">
+    <>
+      <div className="project-latest">
         <h3>{projectData.name}</h3>
-        <p>{projectData.description}</p>
-        <div className="project-tools">
-          <strong>Tooles used: </strong>
-          {
-            projectData.tools.map(tool => {
-              return <a href={tool.webLink} target="_blank">{`${tool.name}, `}</a>
-            })
-          }
+        <h4 className="project-facility">{projectData.facility}</h4>
+        <div className="project-latest-image">
+          <a href={projectData.webLink} target="_blank">
+            <img src={images('./' + projectData.images[0].name)} alt="not found" ></img>
+          </a>
         </div>
-        <a href={projectData.webLink} target="_blank">Find out more</a>
+        {renderProject(projectData, null, projectsCount)}
       </div>
-    </div>
+    </>
   )
-}
+};
+
+const renderProject = (projectData, index, projectsCount) => {
+  return (
+    <>
+      <div key={index} className="project">
+        <div className="project-column-image">
+          {projectData.images.filter(image => !image.latest).map((image, index) => {
+            const imageLink = images('./' + image.name);
+            return (
+              <a href={projectData.webLink} target="_blank" key={index}>
+                <img src={imageLink} alt="not found" ></img>
+              </a>
+            )
+          })}
+          
+        </div>
+        <div className="project-column-info">
+          {projectData.latest ? null : (
+            <>
+              <h3>{projectData.name}</h3>
+              <h4 className="project-facility">{projectData.facility}</h4>
+            </>
+          )}
+          <p>{projectData.description}</p>
+          <div className="project-tools">
+            <strong>Tools used: </strong>
+            {
+              projectData.tools.map((tool, index) => {
+                return tool.webLink ? 
+                (<a key={index} href={tool.webLink} target="_blank">
+                  {`${tool.name}${(index + 1) === projectData.tools.length ? '' : ', '}`}
+                  </a>) : <span>{`${tool.name}${(index + 1) === projectData.tools.length ? '' : ', '}`}</span>
+              })
+            }
+          </div>
+          <a className="more-link" href={projectData.webLink} target="_blank"><FaExternalLinkAlt />Find out more</a>
+        </div>
+      </div>
+      {(index + 1) !== projectsCount ? <hr className="divider"></hr> : null}
+    </>
+  )
+};
 
 function Projects(props) {
   const projects = useSelector(state => state.projects)
   return (
     <div className="projects container" id={props.section.id}>
       <h2>Projects</h2>
-      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      {projects.map(project => renderProject(project))}
+      {renderLatestProject(projects.find(project => project.latest), projects.length)}
+      {
+        projects.filter(project => !project.latest)
+          .map((project, index) => renderProject(project, index, projects.filter(project => !project.latest).length))
+      }
     </div>
-  )
-}
+  );
+};
 
 export default Projects;

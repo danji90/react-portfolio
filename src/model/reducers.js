@@ -91,15 +91,54 @@ const initialState = {
   ],
   projects: [
     {
+      name: 'Mapset - Editor',
+      facility: 'geOps - Spatial Web',
+      description: 'Mapset allows the easy creation of clear and visually appealing layout graphics. With just a few clicks, you can visualize plans for changed stops, communicate the situation with construction projects, ensure customer management at events or provide information about special operational cases on site.',
+      images: [
+        {
+          name: 'plan_editor2.png',
+          latest: true,
+        },
+        {
+          name: 'plan_editor1.png'
+        },
+      ],
+      tools: [
+        {
+          name: 'ReactJs',
+          webLink: 'https://reactjs.org/',
+        },
+        {
+          name: 'OpenLayers',
+          webLink: 'https://openlayers.org/',
+        },
+        {
+          name: 'Redux',
+          webLink: 'https://redux.js.org/',
+        },
+        {
+          name: 'OpenId',
+          webLink: 'https://openid.net/',
+        },
+        {
+          name: 'SASS',
+          webLink: 'https://sass-lang.com/',
+        },
+      ],
+      keyWords: ['Sensors, Internet of Things, Environmental Monitoring, Smart Farming, MQTT, OGC, Interoperability, SensorThings API, SOS, Mozilla IoT, Pika'],
+      webLink: 'https://mapset.io',
+      latest: true,
+    },
+    {
       name: 'SEnviro for Agriculture',
       facility: 'Universitat Jaume I',
       description: 'This project emerged at Universitat Jaume I and focuses on the development of an IoT full stack for monitoring vineyards. In the scope of my Master Thesis (Interoperability Enhancement of IoT Sensor Network Applications for Environmental Monitoring Using Open Web Standards), my work consisted of the deployment and comparison of open source Sensor Web Standard implementations to increase the potential interoperability for agricultural IoT applications.',
       images: [
         {
-          imageUrl: 'public/images/senviro3.jpg'
+          name: 'senviro3.jpg'
         },
         {
-          imageUrl: 'public/images/senviroConnect.jpg'
+          name: 'senviroConnect.jpg'
         }
       ],
       tools: [
@@ -149,10 +188,10 @@ const initialState = {
       description: "GeoMundus is a free international symposium organised by the students from the Erasmus Mundus Master's of Science in Geospatial Technologies. The conference aims to share cutting-edge scientific research, knowledge, and skills in the fields of Geospatial Technologies, Geoinformatics, and Geosciences, including but not limited to geographic information systems and sciences, spatial cognition, geography, and spatial data sciences. </br> As part of the GeoMundus web team, I was in charge of the GeoMundus website development and maintenance. This included collaborating with all the other teams and regularly updating website content.",
       images: [
         {
-          imageUrl: 'public/images/geomundus.jpg'
+          name: 'geomundus.jpg'
         },
         {
-          imageUrl: 'public/images/geomundus1.jpg'
+          name: 'geomundus1.jpg'
         }
       ],
       tools: [
@@ -187,10 +226,10 @@ const initialState = {
       images: [
         {
           name: 'elippss.jpg',
-          imageUrl: 'public/images/elippss.jpg'
+          name: 'elippss.jpg'
         },
         {
-          imageUrl: 'public/images/elippss1.jpg'
+          name: 'elippss1.jpg'
         }
       ],
       tools: [
