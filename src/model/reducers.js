@@ -274,7 +274,7 @@ const initialState = {
         },
       ],
       keyWords: [],
-      webLink: '',
+      webLink: 'http://elippss.herokuapp.com/',
     },
   ]
 }
