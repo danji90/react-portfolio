@@ -11,7 +11,7 @@ const images = require.context('../../assets/images/', true);
 const renderLatestProject = (projectData, projectsCount) => {
   return (
     <>
-      <div className="project-latest">
+      <div key="latest" className="project-latest">
         <h3>{projectData.name}</h3>
         <h4 className="project-facility">{projectData.facility}</h4>
         <div className="project-latest-image">
@@ -28,12 +28,12 @@ const renderLatestProject = (projectData, projectsCount) => {
 const renderProject = (projectData, index, projectsCount) => {
   return (
     <>
-      <div key={index} className="project">
+      <div key={projectData.id} className="project">
         <div className="project-column-image">
-          {projectData.images.filter(image => !image.latest).map((image, index) => {
+          {projectData.images.filter(image => !image.latest).map(image => {
             const imageLink = images('./' + image.name);
             return (
-              <a href={projectData.webLink} target="_blank" key={index}>
+              <a key={image.name.split('.')} href={projectData.webLink} target="_blank">
                 <img src={imageLink} alt="not found" ></img>
               </a>
             )
@@ -53,7 +53,7 @@ const renderProject = (projectData, index, projectsCount) => {
             {
               projectData.tools.map((tool, index) => {
                 return (
-                  <span>
+                  <span key={tool.name}>
                     {tool.webLink ? (
                     <a key={index} href={tool.webLink} target="_blank">
                       {`${tool.name}`}

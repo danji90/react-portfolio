@@ -91,6 +91,7 @@ const initialState = {
   ],
   projects: [
     {
+      id: 'mapset',
       name: 'Mapset - Editor',
       facility: 'geOps - Spatial Web',
       description: 'Mapset allows the easy creation of clear and visually appealing layout graphics. With just a few clicks, you can visualize plans for changed stops, communicate the situation with construction projects, ensure customer management at events or provide information about special operational cases on site.',
@@ -130,6 +131,7 @@ const initialState = {
       latest: true,
     },
     {
+      id: 'senviro',
       name: 'SEnviro for Agriculture',
       facility: 'Universitat Jaume I',
       description: 'This project emerged at Universitat Jaume I and focuses on the development of an IoT full stack for monitoring vineyards. In the scope of my Master Thesis (Interoperability Enhancement of IoT Sensor Network Applications for Environmental Monitoring Using Open Web Standards), my work consisted of the deployment and comparison of open source Sensor Web Standard implementations to increase the potential interoperability for agricultural IoT applications.',
@@ -183,6 +185,7 @@ const initialState = {
       webLink: 'http://www.senviro.uji.es/',
     },
     {
+      id: 'geomundus',
       name: 'GeoMundus Conference 2018',
       facility: 'Universidade Nova de Lisboa',
       description: "GeoMundus is a free international symposium organised by the students from the Erasmus Mundus Master's of Science in Geospatial Technologies. The conference aims to share cutting-edge scientific research, knowledge, and skills in the fields of Geospatial Technologies, Geoinformatics, and Geosciences, including but not limited to geographic information systems and sciences, spatial cognition, geography, and spatial data sciences. </br> As part of the GeoMundus web team, I was in charge of the GeoMundus website development and maintenance. This included collaborating with all the other teams and regularly updating website content.",
@@ -220,6 +223,7 @@ const initialState = {
       webLink: 'http://geomundus.org/2019/',
     },
     {
+      id: 'elippss',
       name: 'ELIPPSS Data Portal',
       facility: 'University of Münster - Institute for Geoinformatics',
       description: "This project emerged from the Unmanned Aerial Systems course at the Institute for GeoInformatics in the University of Münster. The main objective of the project was the development and application of exploratory approaches using several geospatial technologies to monitor the renaturation process in the Aa River, which flows through Münster. I was part of the Web Portal team, one of seven collaborating teams. Our objective was to use mostly open-source technologies to create a data exploration portal for heterogenous data created in the scope of the project.",
