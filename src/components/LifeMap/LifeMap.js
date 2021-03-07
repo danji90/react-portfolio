@@ -13,12 +13,53 @@ import Map from 'ol/Map';
 import LayerPopup from 'ol-ext/control/LayerPopup';
 import GeoJSON from 'ol/format/GeoJSON';
 import 'react-spatial/themes/default/index.scss';
+import Stamen from 'ol/source/Stamen';
+import View from 'ol/View';
+import {fromLonLat} from 'ol/proj';
 
 import './LifeMap.scss';
 import { FaGraduationCap } from "../../../node_modules/react-icons/fa";
 
-const mapBoxKey = 'pk.eyJ1IjoiZGFuamk5MCIsImEiOiJjazA2azNrbzMwMjM3M2VsdmQxaXYyMG9sIn0.bFXyO9IWGsCT2j2o0yXoOw';
 const mapData = require('../../assets/data/mapFeatures.json')
+
+const geticonStyle = (features, iconPath) => {
+  features.map((f, index) => f.setStyle(
+    // new Style({
+    //   image: new CircleStyle({
+    //     radius: 5,
+    //     stroke: new Stroke({color: '#fff'}),
+    //     fill: new Fill({color: 'red'})
+    //   })
+    // }),
+    new Style({
+      image: new Icon({
+        anchor: [0.5, 46],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        src: iconPath,
+      })
+    })
+  )
+)}
+
+const map = new Map({
+  layers: [
+    new TileLayer({
+      source: new Stamen({
+        layer: 'watercolor',
+      }),
+    }),
+    new TileLayer({
+      source: new Stamen({
+        layer: 'terrain-labels',
+      }),
+    }) ],
+  target: 'map',
+  view: new View({
+    center: fromLonLat([-122.416667, 37.783333]),
+    zoom: 12,
+  }),
+});
 
 class LifeMap extends Component {
   constructor(props) {
@@ -28,25 +69,6 @@ class LifeMap extends Component {
     const work = new GeoJSON({featureProjection: 'EPSG:3857'}).readFeatures(mapData.work)
     const residence = new GeoJSON({featureProjection: 'EPSG:3857'}).readFeatures(mapData.residence)
 
-    const geticonStyle = (features, iconPath) => {
-      features.map((f, index) => f.setStyle(
-        // new Style({
-        //   image: new CircleStyle({
-        //     radius: 5,
-        //     stroke: new Stroke({color: '#fff'}),
-        //     fill: new Fill({color: 'red'})
-        //   })
-        // }),
-        new Style({
-          image: new Icon({
-            anchor: [0.5, 46],
-            anchorXUnits: 'fraction',
-            anchorYUnits: 'pixels',
-            src: iconPath,
-          })
-        })
-      )
-    )}
 
     geticonStyle(education, 'images/icons/edu.png');
 
@@ -55,43 +77,66 @@ class LifeMap extends Component {
       new TileLayer({
         title: 'Streets',
         baseLayer: true,
-        source: new XYZ({url: `https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=${mapBoxKey}`})
+        source: new Stamen({
+          layer: 'watercolor',
+        }),
       }),
-      new TileLayer({
-        title: 'Satellite',
-        baseLayer: true,
-        visible: false,
-        source: new XYZ({url: `https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=${mapBoxKey}`})
-      }),
-      new TileLayer({
-        title: 'Gray Scale',
-        baseLayer: true,
-        visible: false,
-        source: new XYZ({url: `https://api.tiles.mapbox.com/v4/mapbox.light/{z}/{x}/{y}.png?access_token=${mapBoxKey}`})
-      }),
-      new VectorLayer({
-        title: 'Education',
-        visible: false,
-        source: new VectorSource({format: new GeoJSON(), features: education}),
-      }),
-      new VectorLayer({
-        title: 'Work',
-        visible: false,
-        source: new VectorSource({format: new GeoJSON(), features: work})
-      }),
-      new VectorLayer({
-        title: 'Residence',
-        visible: false,
-        source: new VectorSource({format: new GeoJSON(), features: residence})
-      })
+      // new TileLayer({
+      //   title: 'Satellite',
+      //   baseLayer: true,
+      //   visible: false,
+      //   source: new XYZ({url: `https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=${mapBoxKey}`})
+      // }),
+      // new TileLayer({
+      //   title: 'Gray Scale',
+      //   baseLayer: true,
+      //   visible: false,
+      //   source: new XYZ({url: `https://api.tiles.mapbox.com/v4/mapbox.light/{z}/{x}/{y}.png?access_token=${mapBoxKey}`})
+      // }),
+      // new VectorLayer({
+      //   title: 'Education',
+      //   visible: false,
+      //   source: new VectorSource({format: new GeoJSON(), features: education}),
+      // }),
+      // new VectorLayer({
+      //   title: 'Work',
+      //   visible: false,
+      //   source: new VectorSource({format: new GeoJSON(), features: work})
+      // }),
+      // new VectorLayer({
+      //   title: 'Residence',
+      //   visible: false,
+      //   source: new VectorSource({format: new GeoJSON(), features: residence})
+      // })
     ]
 
     // Map Object
-    this.map = new Map({layers: this.layers, controls: []});
+    // this.map = new Map({
+    //   layers: [
+    //     new TileLayer({
+    //       source: new Stamen({
+    //         layer: 'watercolor',
+    //       }),
+    //     }),
+    //     new TileLayer({
+    //       source: new Stamen({
+    //         layer: 'terrain-labels',
+    //       }),
+    //     }) ],
+    //   target: 'map',
+    //   view: new View({
+    //     center: fromLonLat([-122.416667, 37.783333]),
+    //     zoom: 12,
+    //   }),
+    // });
 
     // Layer switcher extension
-    this.layerSwitcher = new LayerPopup();
-    this.map.addControl(this.layerSwitcher);
+    // this.layerSwitcher = new LayerPopup();
+    // this.map.addControl(this.layerSwitcher);
+  }
+
+  componentDidMount() {
+
   }
 
   render(props) {
@@ -99,9 +144,12 @@ class LifeMap extends Component {
     return (
     <div className='lifemap container' id={section.id}>
       <h2>Life map</h2>
-      <BasicMap zoom={2} viewOptions={{
+      {/* <BasicMap zoom={2} viewOptions={{
           minZoom: 2
-        }} map={this.map}/>
+        }} map={this.map}/> */}
+        <div id='map' className='map'>
+
+        </div>
     </div>)
   }
 

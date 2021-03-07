@@ -2,6 +2,15 @@ import { SET_MENU_OPEN } from './actions';
 import { SET_ACTIVE_SECTION } from './actions';
 import { SET_XP_OPEN } from './actions';
 
+import mapset2 from '../assets/images/plan_editor2.png';
+import mapset1 from '../assets/images/plan_editor1.png';
+import senviro from '../assets/images/senviro3.jpg';
+import senviroConnect from '../assets/images/senviroConnect.jpg';
+import geomundus1 from '../assets/images/geomundus.jpg';
+import geomundus2 from '../assets/images/geomundus1.jpg';
+import elippss1 from '../assets/images/elippss.jpg';
+import elippss2 from '../assets/images/elippss1.jpg';
+
 const initialState = {
   activeSection: {
     id: 'home',
@@ -97,11 +106,13 @@ const initialState = {
       description: 'Mapset allows the easy creation of clear and visually appealing layout graphics. With just a few clicks, you can visualize plans for changed stops, communicate the situation with construction projects, ensure customer management at events or provide information about special operational cases on site.',
       images: [
         {
-          name: 'plan_editor2.png',
+          url: mapset2,
+          name: 'mapset2',
           latest: true,
         },
         {
-          name: 'plan_editor1.png'
+          url: mapset1,
+          name: 'mapset1',
         },
       ],
       tools: [
@@ -137,10 +148,12 @@ const initialState = {
       description: 'This project emerged at Universitat Jaume I and focuses on the development of an IoT full stack for monitoring vineyards. In the scope of my Master Thesis (Interoperability Enhancement of IoT Sensor Network Applications for Environmental Monitoring Using Open Web Standards), my work consisted of the deployment and comparison of open source Sensor Web Standard implementations to increase the potential interoperability for agricultural IoT applications.',
       images: [
         {
-          name: 'senviro3.jpg'
+          url: senviro,
+          name: 'senviro',
         },
         {
-          name: 'senviroConnect.jpg'
+          url: senviroConnect,
+          name: 'senviroConnect',
         }
       ],
       tools: [
@@ -191,10 +204,12 @@ const initialState = {
       description: "GeoMundus is a free international symposium organised by the students from the Erasmus Mundus Master's of Science in Geospatial Technologies. The conference aims to share cutting-edge scientific research, knowledge, and skills in the fields of Geospatial Technologies, Geoinformatics, and Geosciences, including but not limited to geographic information systems and sciences, spatial cognition, geography, and spatial data sciences. </br> As part of the GeoMundus web team, I was in charge of the GeoMundus website development and maintenance. This included collaborating with all the other teams and regularly updating website content.",
       images: [
         {
-          name: 'geomundus.jpg'
+          url: geomundus1,
+          name: 'geomundus1',
         },
         {
-          name: 'geomundus1.jpg'
+          url: geomundus2,
+          name: 'geomundus2',
         }
       ],
       tools: [
@@ -229,10 +244,12 @@ const initialState = {
       description: "This project emerged from the Unmanned Aerial Systems course at the Institute for GeoInformatics in the University of Münster. The main objective of the project was the development and application of exploratory approaches using several geospatial technologies to monitor the renaturation process in the Aa River, which flows through Münster. I was part of the Web Portal team, one of seven collaborating teams. Our objective was to use mostly open-source technologies to create a data exploration portal for heterogenous data created in the scope of the project.",
       images: [
         {
-          name: 'elippss.jpg',
+          url: elippss1,
+          name: 'elippss1',
         },
         {
-          name: 'elippss1.jpg'
+          url: elippss2,
+          name: 'elippss2',
         }
       ],
       tools: [

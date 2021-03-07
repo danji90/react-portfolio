@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 const images = require.context('../../assets/images/', true);
 
 const renderLatestProject = (projectData, projectsCount) => {
+  console.log(projectData);
   return (
     <>
       <div key="latest" className="project-latest">
@@ -16,7 +17,7 @@ const renderLatestProject = (projectData, projectsCount) => {
         <h4 className="project-facility">{projectData.facility}</h4>
         <div className="project-latest-image">
           <a href={projectData.webLink} target="_blank">
-            <img src={images('./' + projectData.images[0].name)} alt="not found" ></img>
+            <img src={projectData.images[0].url} alt="not found" ></img>
           </a>
         </div>
         {renderProject(projectData, null, projectsCount)}
@@ -31,10 +32,9 @@ const renderProject = (projectData, index, projectsCount) => {
       <div key={projectData.id} className="project">
         <div className="project-column-image">
           {projectData.images.filter(image => !image.latest).map(image => {
-            const imageLink = images('./' + image.name);
             return (
-              <a key={image.name.split('.')} href={projectData.webLink} target="_blank">
-                <img src={imageLink} alt="not found" ></img>
+              <a key={image.name} href={projectData.webLink} target="_blank">
+                <img src={image.url} alt="not found" ></img>
               </a>
             )
           })}

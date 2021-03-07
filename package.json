@@ -8,21 +8,26 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@geops/react-ui": "^1.0.7",
-    "babel-loader": "^8.0.6",
+    "@material-ui/core": "^4.11.3",
     "babel-preset-react-app": "^9.1.2",
     "core-js": "^3.6.5",
     "gh-pages": "^2.2.0",
+    "mapbox-gl": "^2.1.1",
+    "mobility-toolbox-js": "^1.2.15",
     "node-sass": "^4.12.0",
-    "ol": "^5.3.3",
+    "ol": "^6.5.0",
     "ol-ext": "^3.1.6",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
     "react-redux": "^7.2.0",
-    "react-scripts": "3.4.1",
-    "react-spatial": "^0.2.8",
+    "react-scripts": "^4.0.3",
+    "react-spatial": "^1.0.22",
     "redux": "^4.0.5"
+  },
+  "peerDependencies": {
+    "mobility-toolbox-js": "^1.2.15"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
@@ -46,7 +51,9 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ],
-    "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
   },
   "browserslist": {
     "production": [
